@@ -44,7 +44,7 @@ RSpec.describe Inquiry, type: :model do
         {key: :name, value: nil, reason: 'nil'},
         {key: :name, value: Faker::String.random(Inquiry::MAX_LENGTH_NAME + 1), reason: 'too long'},
         {key: :email, value: nil, reason: 'nil'},
-        {key: :email, value: 'aaaaaa', reason: 'too long'},
+        {key: :email, value: 'aaaaaa', reason: 'invalid format'},
         {key: :detail, value: nil, reason: 'nil'},
         {key: :detail, value: Faker::String.random(Inquiry::MAX_LENGTH_DETAIL + 1), reason: 'too long'},
       ]
