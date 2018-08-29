@@ -4,6 +4,8 @@
 ## Configuration
 ~~~ sh
 bundle install --path vendor/bundle
+cp ./config/database.yml.sample ./config/database.yml
+cp ./config/secrets.yml.sample ./config/secrets.yml
 ~~~
 
 ## Database creation
