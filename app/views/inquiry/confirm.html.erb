@@ -1,0 +1,25 @@
+<div class="p-2">
+  <p>この内容でよろしければ送信ボタンと押してください。</p>
+  <div class="card">
+    <div class="card-body">
+      <p class="card-title text-muted">お名前</p>
+      <p class="card-text"><%= @inquiry.name %></p>
+      <p class="card-title text-muted">メールアドレス</p>
+      <p class="card-text"><%= @inquiry.email %></p>
+      <p class="card-title text-muted">お問い合わせ種類</p>
+      <p class="card-text"><%= @inquiry_kind.name %></p>
+      <p class="card-title text-muted">お問い合わせ内容</p>
+      <p class="card-text"><%= @inquiry.detail %></p>
+    </div>
+  </div>
+  <div class="pt-2">
+    <%= form_for(@inquiry, url: { controller: :inquiry, action: :create }, html: { method: :post }) do |f| %>
+      <%= f.hidden_field :name %>
+      <%= f.hidden_field :email %>
+      <%= f.hidden_field :inquiry_kind_id %>
+      <%= f.hidden_field :detail %>
+      <%= link_to '戻る', :back, :class => 'btn btn-light' %>
+      <%= f.submit '送信', :class => 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
