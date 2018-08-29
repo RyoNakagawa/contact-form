@@ -1,28 +1,26 @@
-== README
+## Ruby version
+- 2.2.3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Configuration
+~~~ sh
+bundle install --path vendor/bundle
+cp ./config/database.yml.sample ./config/database.yml
+cp ./config/secrets.yml.sample ./config/secrets.yml
+~~~
 
-Things you may want to cover:
+## Database creation
+~~~ sh
+bundle exec rake db:create
+~~~
 
-* Ruby version
+## Database initialization
+~~~ sh
+bundle exec rake db:migrate
+bundle exec rake db:seed
+~~~
 
-* System dependencies
+## How to run the test suite
+~~~ sh
+bundle exec rspec
+~~~
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
