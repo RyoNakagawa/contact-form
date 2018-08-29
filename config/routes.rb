@@ -53,4 +53,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  root 'inquiry#new'
+  post 'inquiry/confirm' => 'inquiry#confirm'
+  post 'inquiry/create' => 'inquiry#create'
+  get 'inquiry/complete' => 'inquiry#complete'
 end
